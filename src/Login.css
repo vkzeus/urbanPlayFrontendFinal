@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full height and no scrollbars */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.login-head{
+  color: white !important;
+  font-size: 6rem;
+}
+
+/* Main container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url("./assets/heroImage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
