@@ -15,7 +15,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/register", {
+      const response = await axios.post("https://urbanplaybackend.onrender.com/register", {
         username: userName,
         password: password,
       });
