@@ -51,7 +51,7 @@ function Register() {
         <button type="submit" className="login-button">Register</button>
       </form>
       <p className="register-link">
-        Already have an account? <a href="/login">Login</a>
+        Already have an account? <a href="/">Login</a>
       </p>
     </div>
     </div>

@@ -11,7 +11,7 @@ function Navbar() {
 
   const handleLogout = () => {
     localStorage.removeItem("User");
-    navigate("/login");
+    navigate("/");
   };
   const isLogin=localStorage.getItem("User");
   useEffect(()=>{
@@ -25,7 +25,7 @@ function Navbar() {
     <AppBar position="static" sx={{ bgcolor: '#1e88e5',width:"100%", height:"100%" }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/dashboard" style={{ textDecoration: 'none', color: 'white' }}>
+          <Link to={isLogin ?"/dashboard" :null} style={{ textDecoration: 'none', color: 'white' }}>
             UrbanPlay
           </Link>
           

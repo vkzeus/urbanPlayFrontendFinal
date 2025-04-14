@@ -51,7 +51,7 @@ function Dashboard() {
                 color="error"
                 onClick={() => {
                   localStorage.removeItem("User");
-                  navigate("/login", { replace: true });
+                  navigate("/", { replace: true });
                 }}
                 fullWidth
               >
