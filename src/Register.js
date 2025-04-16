@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import Navbar from "./Navbar"; 
+import Footer from "./Footer";
 
 function Register() {
   const [userName, setUserName] = useState("");
@@ -15,13 +16,13 @@ function Register() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://urbanplaybackend.onrender.com/register", {
+      const response = await axios.post("https://urbanplaybackendserver.onrender.com", {
         username: userName,
         password: password,
       });
       console.log(response.data);
       alert("User registered successfully!");
-      navigate("/login"); // Redirect to login page after successful registration
+      navigate("/"); // Redirect to login page after successful registration
     } catch (error) {
       console.error(error.response?.data || error.message);
       alert("Registration failed!");
@@ -29,10 +30,10 @@ function Register() {
   };
 
   return (
-    <div>
-        <Navbar/>
-    <div className="container" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-      <h3 className="register-heading">Register</h3>
+    <div className="register-wrapper">
+       
+    <div className="container-register">
+      <h3 className="register-head">Register</h3>
       <form onSubmit={handleRegister}>
         <input
           type="text"
@@ -48,13 +49,15 @@ function Register() {
           onChange={(e) => setPassword(e.target.value)}
            className="input-field"
         /> <br/>
-        <button type="submit" className="login-button">Register</button>
+        <button type="submit" className="register-button">Register</button>
       </form>
-      <p className="register-link">
+      <p className="login-link">
         Already have an account? <a href="/">Login</a>
       </p>
     </div>
     </div>
+  
+  
   );
 }
 

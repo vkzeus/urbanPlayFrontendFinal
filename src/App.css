@@ -1,29 +1,20 @@
-/* Reset default spacing */
-* {
+html, body, #root {
+  height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Full height and no scrollbars */
-html, body {
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   height: 100%;
-  width: 100%;
   overflow: hidden;
 }
 
-/* Main container styling */
-.container {
+.main-content {
+  flex: 1;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  height: 100vh;
-  width: 100vw;
-
-  background-image: url("./assets/heroImage.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }

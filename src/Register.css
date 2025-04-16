@@ -1,74 +1,55 @@
 
 
 /* Center the container */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-    background-color: #f5f5f5;
-    padding: 20px;
-    padding-bottom: 100px;
-    width: 100%;
-    background-image: url("./assets/heroImage.jpg");
-    background-size: cover;       /* Ensures the image covers the entire area */
-    background-position: center;  /* Keeps the image centered */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Style for the Login heading */
-  .login-heading {
-    font-size: 2rem;
-    margin-bottom: 20px; /* Spacing between the heading and the form */
-  }
-  
-  /* Style for input fields */
-  .input-field {
-    padding: 10px;
-    margin-bottom: 10px; /* Space between fields */
-    width: 300px; /* Set the width of input fields */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Style for the Login button */
-  .login-button {
-    padding: 10px;
-    width: 320px; /* Match button width to input fields */
-    border: none;
-    background-color: #3f51b5;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .login-button:hover {
-    background-color: #2c387e;
-  }
-  
-  /* Style for the Register link */
-  .register-link {
-    margin-top: 15px;
-  }
-  .register{
-    color: white !important;
-  }
-  
-  .register-link a {
-    text-decoration: none;
-    color: #3f51b5;
-  }
-  
-  .register-link a:hover {
-    text-decoration: underline;
-  }
-  .register-heading{
-    font-size: 6rem;
-    color: white;
-  }
-  
+.register-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/heroImage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  overflow: auto;
+}
+
+
+/* Fix width consistency */
+.container-register {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.register-head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e53ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
+}

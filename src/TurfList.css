@@ -1,0 +1,79 @@
+/* Container to ensure the whole view adjusts properly */
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh; /* Full height */
+    padding: 20px;  /* Add some padding to ensure no content is stuck to the edges */
+    background-color: #f9f9f9;  /* Light background */
+  }
+  
+  /* Styling for the container that holds the grid */
+  .MuiContainer-root {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  
+  /* Grid container, spacing for items */
+  .MuiGrid-root {
+    padding-bottom: 20px; /* Add bottom spacing to prevent overlap */
+  }
+  
+  /* Ensure the cards fit well in the grid and adjust with screen size */
+  .MuiCard-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 360px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;  /* Avoid content overflow */
+  }
+  
+  /* Hover effect for cards */
+  .MuiCard-root:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Make sure buttons inside the card are aligned */
+  .MuiCardActions-root {
+    margin-top: auto;
+  }
+  
+  /* Add some spacing around the title, image, and content */
+  .MuiCardContent-root {
+    padding: 16px;
+  }
+  
+  .MuiTypography-root {
+    margin-bottom: 8px;
+  }
+  
+  /* Ensure the container uses full width on all screens */
+  .MuiGrid-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Adjust the button text size and padding */
+  .MuiButton-root {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  /* Button styling */
+  .MuiButton-contained {
+    background-color: #1e53ff;
+    color: white;
+    text-transform: none;
+    width: 100%;
+  }
+  
+  .MuiButton-outlined {
+    color: #1e53ff;
+    text-transform: none;
+    width: 100%;
+  }
+  

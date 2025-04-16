@@ -11,6 +11,7 @@ import {
   Stack,
   Box,
 } from "@mui/material";
+import "./Dashboard.css"
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -18,13 +19,7 @@ function Dashboard() {
   const infoUser = JSON.parse(localStorage.getItem("User"));
 
   return (
-    <div>
-        <Navbar/>
-        <div style={{  minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          }}>
+  <div className="dashboard-container">
     <Container maxWidth="sm" sx={{ mt: 6 }}>
       <Card elevation={4}>
         <CardContent>
@@ -63,7 +58,7 @@ function Dashboard() {
       </Card>
     </Container>
     </div>
-    </div>
+    
   );
 }
 

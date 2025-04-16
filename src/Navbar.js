@@ -14,9 +14,7 @@ function Navbar() {
     navigate("/");
   };
   const isLogin=localStorage.getItem("User");
-  useEffect(()=>{
-   
-  },[])
+
   console.log(location.pathname)
 
 
@@ -30,7 +28,10 @@ function Navbar() {
           </Link>
           
         </Typography>
-
+        <Box sx={{ display: 'flex', gap: 2 }}>
+    
+    { isLogin?<Button color="inherit" disabled={location.pathname==="/bookings"} onClick={()=>{navigate("/bookings")}}>Bookings</Button>:null}
+  </Box>
         <Box sx={{ display: 'flex', gap: 2 }}>
     
           { isLogin?<Button color="inherit" onClick={handleLogout}>Logout</Button>:null}

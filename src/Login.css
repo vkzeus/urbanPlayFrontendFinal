@@ -1,32 +1,68 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Full height and no scrollbars */
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-.login-head{
-  color: white !important;
-  font-size: 6rem;
-}
-
-/* Main container styling */
-.container {
+/* Make sure the page stretches full height */
+.login-wrapper {
+  flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('./assets/heroImage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  overflow: auto;
+}
 
-  height: 100vh;
-  width: 100vw;
 
+/* Your login box styling */
+ .container-login {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional - center everything nicely */
+.login-head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e53ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
+}
+ .login-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("./assets/heroImage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+  padding: 40px 20px;
+  overflow: auto;
 }

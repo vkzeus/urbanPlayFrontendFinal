@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css"
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 
 function Login() {
@@ -16,7 +17,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/login", {
+      const response = await axios.post("https://urbanplaybackendserver.onrender.com/login", {
         username: userName,
         password: password,
       });
@@ -38,12 +39,12 @@ function Login() {
   };
 
   return (
-    <div className="App">
-     <Navbar/>
-    <>
    
     
-      <div className="container">
+    
+   
+    <div className="login-wrapper">
+      <div className="container-login">
       <h3 className="login-head">Login</h3>
         <form onSubmit={handleLogin}>
           <input
@@ -68,8 +69,10 @@ function Login() {
           Don't have an account? <Link to="/register">Register</Link>
         </p>
       </div>
-    </>
-    </div>
+      </div>
+ 
+    
+    
   );
 }
 

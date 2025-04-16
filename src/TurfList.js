@@ -1,5 +1,6 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import "./TurfList.css";
 import image1 from "./assets/turf1.jpg";
 import image2 from "./assets/turf2.jpg";
 import image3 from "./assets/turf3.jpg";
@@ -16,38 +17,39 @@ import {
   Typography,
   Grid,
   Container,
-  Box,
   Stack,
 } from "@mui/material";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 function TurfList() {
   const navigate = useNavigate();
   const [bookedTurf, setBookedTurf] = useState({ turf: "", rate: "" });
+  const userData = JSON.parse(localStorage.getItem("User"));
+
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page on load
   }, []);
 
   const turfs = [
-    { _id: "1", name: "Vishwas Garden", ratePerHour: 700, img: image1,location:"Asaram Bapu Ashram near Bapu Pool" },
-    { _id: "2", name: "HomeGround", ratePerHour: 700, img: image2 ,location:"Suyojit Gardens near Datta Mandir"},
-    { _id: "3", name: "PlayBox", ratePerHour: 600, img: image3,location:"In front of Barobar Restaurant Bapu Pool" },
-    { _id: "4", name: "Kage", ratePerHour: 800, img: image4 ,location:"Pathardi Gaon Devlali Road"},
-    { _id: "5", name: "DonBosco", ratePerHour: 800, img: image5 ,location:"College Road in front of Manyavaar"},
-    { _id: "6", name: "Hattrick", ratePerHour: 900, img: image6 ,location:"Near Chopda Lawns Old Gangapur Naka"},
-    { _id: "7", name: "BigBounce", ratePerHour: 1000, img: image7 ,location:"RD Circle near Karmayogi Nagar"},
+    { _id: "1", name: "Vishwas Garden", ratePerHour: 700, img: image1, location: "Asaram Bapu Ashram near Bapu Pool" },
+    { _id: "2", name: "HomeGround", ratePerHour: 700, img: image2, location: "Suyojit Gardens near Datta Mandir" },
+    { _id: "3", name: "PlayBox", ratePerHour: 600, img: image3, location: "In front of Barobar Restaurant Bapu Pool" },
+    { _id: "4", name: "Kage", ratePerHour: 800, img: image4, location: "Pathardi Gaon Devlali Road" },
+    { _id: "5", name: "DonBosco", ratePerHour: 800, img: image5, location: "College Road in front of Manyavaar" },
+    { _id: "6", name: "Hattrick", ratePerHour: 900, img: image6, location: "Near Chopda Lawns Old Gangapur Naka" },
+    { _id: "7", name: "BigBounce", ratePerHour: 1000, img: image7, location: "RD Circle near Karmayogi Nagar" },
   ];
 
-  const handleBooking = async (turf) => {
-    const booking = { turfName: turf.name, rate: turf.ratePerHour };
-    setBookedTurf(booking);
-    console.log("Booked:", booking);
+  const handleBooking = async (turf, userData) => {
+    const booking = { turfName: turf.name, rate: turf.ratePerHour, user: userData.name };
 
     try {
-      const response = await axios.post("http://localhost:3001/turfs", booking);
+      console.log("Booking data being sent:", booking); // Log the booking object directly
+      const response = await axios.post("https://urbanplaybackendserver.onrender.com/turfs", booking); // Send booking directly
       console.log("Booking response:", response.data);
       alert("Turf booked successfully!");
     } catch (error) {
@@ -57,17 +59,16 @@ function TurfList() {
   };
 
   return (
-    <div>
-      <Navbar />
+    <div className="container1">
       <Container
-      sx={{
-        py: 6,
-        maxHeight: '90vh',
-        overflowY: 'auto',
-        direction: 'ltr',
-        display: 'block',
-      }}
-    >
+        sx={{
+          py: 6,
+          maxWidth: '100%',
+          overflowY: 'auto',
+          direction: 'ltr',
+          display: 'block',
+        }}
+      >
         <Stack direction="row" justifyContent="space-between" alignItems="center" mb={4}>
           <Typography variant="h4" fontWeight={600}>
             ⚽ Available Turfs for Booking
@@ -81,8 +82,8 @@ function TurfList() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  height: "100%",  // Ensures that cards stretch to fill grid items uniformly
-                  minHeight: "360px",  // Minimum height to keep the cards even
+                  height: "100%",
+                  minHeight: "360px",
                   borderRadius: 3,
                   boxShadow: 5,
                   transition: "transform 0.3s ease-in-out",
@@ -112,7 +113,7 @@ function TurfList() {
                     variant="contained"
                     startIcon={<SportsSoccerIcon />}
                     sx={{ textTransform: "none" }}
-                    onClick={() => handleBooking(turf)}
+                    onClick={() => handleBooking(turf, userData)}
                   >
                     Book Now
                   </Button>
